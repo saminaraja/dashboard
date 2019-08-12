@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="See Details">
+  <meta name="keywords" content="profile">
+  <meta name="author" content="Samina Raja">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+  <link href="css/index.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="main-content">
+            <div class="top-navigation desktop-hide">
+                <span class="bold">Dasboard</span>
+
+                <button id="openNavBar" class="button desktop-hide">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="left-section side-navigation">
+                <ul class="mobile-hide" id="sideNavBar">
+                    <li><a href="#" class="fa fa-home"></a></li>
+                    <li>
+                        <a href="#">
+                            <span class="profile-icon-wrapper">
+                                <span class="profile-pic" ></span>
+                                <i class="fa fa-cog fa-fw"></i>
+                            </span>
+                            <p class="bold profile-name">Maratha Blair<i class="fa fa-circle active-dot"></i></p>
+                            <p class="profile-title color-grey">Developer</p>
+                        </a>
+                    </li>
+                    <li>
+                        <ul class="sub-side-navigation">
+                            <li class="dash">
+                                <a href="#" id="dashboardButton" class="bold">
+                                <i class="fa fa-tachometer fa_custom margin-right"></i>Dasboard
+                                <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul id="dashboardItems" class="dashboard-items color-grey">
+                                    <li><a href="#">Page Visitors</a></li>
+                                    <li><a href="#">Post Performance</a></li>
+                                    <li><a href="#">Team Overall</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href ="#" class="bold"> 
+                                    <i class="fa fa-calendar margin-right"></i>Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href ="#" class="bold"> 
+                                <i class="fa fa-inbox margin-right"></i>Inbox
+                                <span class="caret-wrapper">
+                                    <i class="fa fa-caret-down"></i>
+                                    <i class="fa fa-caret-up"></i>
+                                </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href ="#" class="bold"> 
+                                <i class="fa fa-files-o margin-right"></i>Invoicing
+                                </a>
+                            </li>
+                            <li>
+                                <a href ="#" class="bold"> 
+                                <i class="fa fa-flask margin-right"></i>Lab / Experimental
+                                </a>
+                            </li>
+                            <li>
+                                <span class="color-grey">RECENTLY VIEWED</span>
+                                <ul class="viewed-items">
+                                    <li><a href="#"> Overall performance <i class="fa fa-arrow-right"></i></a></li>
+                                    <li><a href="#"> Invoice #940<i class="fa fa-arrow-right"></i></a></li>
+                                    <li><a href="#"> Customer: Minerva Viewer<i class="fa fa-arrow-right"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="side-nav-footer">
+                        <p>Page: <span class="bold">dribble.com/janlosert</span></p>
+                        <span class="color-grey">575940-1811</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right-section">
+                <div class="top-navigation mobile-hide">
+                    <span class="bold">Dasboard</span>
+                    <button class="country-button button-with-arrows mobile-hide">
+                        <i class="fa fa-flag"></i> 
+                        <span>ENG</span>  
+                        <span class="caret-wrapper">
+                            <i class="fa fa-caret-down"></i>
+                            <i class="fa fa-caret-up"></i> 
+                        </span>
+                    </button>
+                </div>
+                <div class="middle-section">
+                    <div class="bar-comparison">
+                        <div class="bar-head">
+                            <p>Daily Visitors</p>
+                            <button class="month-button button-with-arrows">
+                                <span>December</span>  
+                                <span class="caret-wrapper">
+                                    <i class="fa fa-caret-down"></i>
+                                    <i class="fa fa-caret-up"></i> 
+                                </span>
+                            </button>
+                            <button class="year-button button-with-arrows">
+                                <span>2018</span>  
+                                <span class="caret-wrapper">
+                                    <i class="fa fa-caret-down"></i>
+                                    <i class="fa fa-caret-up"></i> 
+                                </span>
+                            </button>
+                        </div>
+                        <div id="resizable" class="bar-body">
+                            <div id="chartContainer" ></div>
+                        </div>
+                    </div>
+
+                    <div class="line-graph-section">
+                        <div class="line-graph">
+                            <p class= "color-grey">REAL TIME USERS</p>
+                            <p class="bold line-grap-average-values">56</p>
+                            <p class="graph-percent-values bold">
+                                +9.8% 
+                                <span><i class="fa fa-arrow-right"></i></span>
+                            </p>
+                            <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="line-graph">
+                            <p class= "color-grey">TOTAL VISITS</p>
+                            <p class="bold line-grap-average-values">54,598</p>
+                            <p class="graph-percent-values bold value-down">
+                                -11.9% 
+                                <span><i class="fa fa-arrow-right"></i></span>
+                            </p>
+                            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="line-graph">
+                            <p class= "color-grey">BOUNCE RATE</p>
+                            <p class="bold line-grap-average-values">54,598</p>
+                            <p class="graph-percent-values bold value-down">
+                                +73.67%
+                                <span><i class="fa fa-arrow-right"></i></span>
+                            </p>
+                            <div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="line-graph">
+                            <p class= "color-grey">VISIT DURATION</p>
+                            <p class="bold line-grap-average-values">1m 4s</p>
+                            <p class="graph-percent-values bold">
+                                +19.6%
+                                <span><i class="fa fa-arrow-right"></i></span>
+                            </p>
+                            <div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="table-wrapper most-visited-section">
+                        <table id="visitsTable">
+                            <caption class="bold">Most Visited Pages</caption>
+                            <thead class="color-grey">
+                                <th>NETWORK</th>
+                                <th></th>
+                                <th>VISITORS</th>
+                                <th>UNIQUE VISITS</th>
+                                <th>BOUNCE RATE</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class=" table-wrapper social-media-traffic">
+                        <table id="socialTraffic">
+                            <caption class="bold">Social Media Traffic</caption>
+                            <thead class="color-grey">
+                                <th>PAGE NAME</th>
+                                <th>VISITORS</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="constants/constants.js"></script>
+   <script src="scripts/index.js"></script>
+</body>
+</html>
